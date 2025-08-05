@@ -1,0 +1,46 @@
+services:
+  # Backend Service for E18
+  - type: web
+    name: e18-backend
+    runtime: python
+    region: oregon
+    plan: starter
+    branch: main
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -k uvicorn.workers.UvicornWorker main:app"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: teen-poll14-db
+          property: connectionString
+      - key: PYTHON_VERSION
+        value: 3.9.0
+
+  # Frontend Service for E18
+  - type: web
+    name: e18-frontend
+    env: static
+    repo: https://github.com/1withYin/teen-poll18
+    rootDir: frontend
+    domains:
+      - e18.myworldmysay.com
+    buildFilter:
+      paths:
+        - frontend/**
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /api/:path*
+        destination: https://e18-backend.onrender.com/api/:path*
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+# Note: Using the same database but with _18 suffix tables
+# This keeps data separate and safe
+databases:
+  - name: teen-poll14-db
+    plan: basic-256mb
+    region: oregon
