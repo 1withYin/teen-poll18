@@ -1013,4 +1013,3 @@ if __name__ == "__main__":
     uvicorn.run(app, host=HOST, port=PORT)
 
 print("Registered routes:") # Force redeploy
-# Use main tables for everything
