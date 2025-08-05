@@ -7,7 +7,7 @@
 # - Imports and setup
 # - App startup/shutdown
 # - CORS and middleware
-# - API endpoints (categories, questions, voting, results, etc.)
+# - API endpoints (categories_18, questions_18, voting, results, etc.)
 # - Helper functions (block completion, etc.)
 # - Static file serving for frontend
 
@@ -17,7 +17,7 @@
 from fastapi import FastAPI, HTTPException, Request, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses_18 import FileResponse, JSONResponse
 from sqlalchemy import text, insert, Table, Column, Integer, String, MetaData, Text, TIMESTAMP, create_engine
 from typing import List, Dict
 import json
@@ -34,12 +34,12 @@ from datetime import datetime, timedelta
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.INFO)
 logger = logging.getLogger(__name__)
 
-# SQLAlchemy metadata for table definitions (used for 'other_responses')
+# SQLAlchemy metadata for table definitions (used for 'other_responses_18')
 metadata = MetaData()
 
-# Table definition for 'other_responses' (for free-text answers)
+# Table definition for 'other_responses_18' (for free-text answers)
 other_responses_table = Table(
-    "other_responses",
+    "other_responses_18",
     metadata,
     Column("id", Integer, primary_key=True),
     Column("question_id", String(20), nullable=False),
@@ -168,16 +168,16 @@ app.add_middleware(
 # --------------------
 # API Endpoints
 # --------------------
-# Get all categories
-@app.get("/api/categories")
+# Get all categories_18
+@app.get("/api/categories_18")
 async def get_categories(request: Request):
     try:
         # Debug: Log the database URL being used
         logger.info(f"Database URL: {DATABASE_URL}")
         
         with request.app.state.engine.connect() as conn:
-            # Debug: Check if categories table exists
-            table_check = conn.execute(text("SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'categories')"))
+            # Debug: Check if categories_18 table exists
+            table_check = conn.execute(text("SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'categories_18')"))
             table_exists = table_check.scalar()
             logger.info(f"Categories table exists: {table_exists}")
             
@@ -189,7 +189,7 @@ async def get_categories(request: Request):
             schema_result = conn.execute(text("""
                 SELECT column_name, data_type 
                 FROM information_schema.columns 
-                WHERE table_name = 'categories' 
+                WHERE table_name = 'categories_18' 
                 ORDER BY ordinal_position
             """))
             schema = schema_result.mappings().all()
@@ -198,7 +198,7 @@ async def get_categories(request: Request):
             # Debug: Check if there are any rows at all
             any_rows = conn.execute(text("SELECT COUNT(*) FROM categories_18"))
             total_rows = any_rows.scalar()
-            logger.info(f"Total rows in categories table: {total_rows}")
+            logger.info(f"Total rows in categories_18 table: {total_rows}")
             
             # Debug: Check transaction isolation and session info
             session_info = conn.execute(text("""
@@ -215,38 +215,38 @@ async def get_categories(request: Request):
             if total_rows > 0:
                 sample_data = conn.execute(text("SELECT * FROM categories_18 LIMIT 3"))
                 sample_rows = sample_data.mappings().all()
-                logger.info(f"Sample data from categories: {sample_rows}")
+                logger.info(f"Sample data FROM categories_18: {sample_rows}")
             else:
-                logger.info("No rows found in categories table")
+                logger.info("No rows found in categories_18 table")
             
-            # Debug: Test the connection and count categories
+            # Debug: Test the connection and count categories_18
             count_result = conn.execute(text("SELECT COUNT(*) FROM categories_18"))
             count = count_result.scalar()
-            logger.info(f"Found {count} categories in database")
+            logger.info(f"Found {count} categories_18 in database")
             
-            # Debug: Show first few categories
+            # Debug: Show first few categories_18
             sample_result = conn.execute(text("SELECT id, category_name FROM categories_18 LIMIT 3"))
             sample_categories = sample_result.mappings().all()
-            logger.info(f"Sample categories: {sample_categories}")
+            logger.info(f"Sample categories_18: {sample_categories}")
             
             result = conn.execute(text("""
                 SELECT id, category_name, category_text, category_text_long
                 FROM categories_18
                 ORDER BY id
             """))
-            categories = result.mappings().all()
-            logger.info(f"Returning {len(categories)} categories")
-            return [{"id": str(cat["id"]), "category_name": cat["category_name"], "category_text": cat["category_text"], "category_text_long": cat["category_text_long"]} for cat in categories]
+            categories_18 = result.mappings().all()
+            logger.info(f"Returning {len(categories_18)} categories_18")
+            return [{"id": str(cat["id"]), "category_name": cat["category_name"], "category_text": cat["category_text"], "category_text_long": cat["category_text_long"]} for cat in categories_18]
     except Exception as e:
-        logger.error(f"Error fetching categories: {str(e)}")
+        logger.error(f"Error fetching categories_18: {str(e)}")
         return []
 
-# Get all questions (optionally filter by category and block)
-@app.get("/api/questions")
+# Get all questions_18 (optionally filter by category and block)
+@app.get("/api/questions_18")
 async def get_questions(request: Request, category_id: str = Query(None), block: int = Query(None)):
     try:
         with request.app.state.engine.connect() as conn:
-            # Updated query to use blocks table instead of questions.block column
+            # Updated query to use blocks_18 table instead of questions_18.block column
             query = """
                 SELECT q.id, q.question_id, q.question_text, q.category_id, q.color_code, q.check_box, c.category_name
                 FROM questions_18 q
@@ -258,7 +258,7 @@ async def get_questions(request: Request, category_id: str = Query(None), block:
                 where_clauses.append("q.category_id = :category_id")
                 params["category_id"] = int(category_id)
             if block is not None:
-                # Use blocks table to filter by block_number
+                # Use blocks_18 table to filter by block_number
                 where_clauses.append("""
                     EXISTS (
                         SELECT 1 FROM blocks_18 b 
@@ -271,19 +271,19 @@ async def get_questions(request: Request, category_id: str = Query(None), block:
                 query += " WHERE " + " AND ".join(where_clauses)
             query += " ORDER BY q.question_number"
             result = conn.execute(text(query), params)
-            questions = result.mappings().all()
-            if not questions:
-                logger.error("No questions found in database")
-                raise HTTPException(status_code=404, detail="No questions found")
+            questions_18 = result.mappings().all()
+            if not questions_18:
+                logger.error("No questions_18 found in database")
+                raise HTTPException(status_code=404, detail="No questions_18 found")
             out = []
-            for question in questions:
+            for question in questions_18:
                 options_result = conn.execute(text("""
                     SELECT id, option_text, option_code, response_message, companion_advice
                     FROM options_18
                     WHERE question_id = :question_id
                     ORDER BY option_code
                 """), {"question_id": question['question_id']})
-                options = options_result.mappings().all()
+                options_18 = options_result.mappings().all()
                 out.append({
                     "id": question['id'],
                     "question_id": question['question_id'],
@@ -293,19 +293,19 @@ async def get_questions(request: Request, category_id: str = Query(None), block:
                     "color_code": question['color_code'],
                     "check_box": question['check_box'],
                     "block": block,  # Use the requested block parameter
-                    "options": [{
+                    "options_18": [{
                         "id": opt['id'],
                         "text": opt['option_text'],
                         "code": opt['option_code'],
                         "response_message": opt['response_message'],
                         "companion_advice": opt['companion_advice']
-                    } for opt in options]
+                    } for opt in options_18]
                 })
             return out
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Error fetching questions: {str(e)}")
+        logger.error(f"Error fetching questions_18: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/vote")
@@ -398,7 +398,7 @@ async def submit_vote(vote: Vote, request: Request):
                 raise HTTPException(status_code=400, detail="Invalid option")
             # Get client IP
             client_ip = request.client.host
-            # Record the vote in responses table with UUID if provided
+            # Record the vote in responses_18 table with UUID if provided
             if vote.uuid:
                 conn.execute(text("""
                     INSERT INTO responses_18 (question_id, option_id, uuid, option_code)
@@ -415,7 +415,7 @@ async def submit_vote(vote: Vote, request: Request):
                     VALUES (:question_id, :option_id)
                 """), {"question_id": vote.question_id, "option_id": option['id']})
             
-            # After recording the vote, check if all questions in the block are answered
+            # After recording the vote, check if all questions_18 in the block are answered
             # Get category_id and block for this question
             qinfo = conn.execute(text("""
                 SELECT category_id, block FROM questions_18 WHERE question_id = :qid
@@ -433,7 +433,7 @@ async def submit_vote(vote: Vote, request: Request):
         logger.error(f"Error submitting vote: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/api/questions/{question_id}/results")
+@app.get("/api/questions_18/{question_id}/results")
 async def get_question_results(question_id: str, request: Request):
     print(f"DEBUG: Getting results for question_id: {question_id}")
     logger.debug(f"Getting results for question_id: {question_id}")
@@ -446,15 +446,15 @@ async def get_question_results(question_id: str, request: Request):
             qtype = qtype_result.mappings().first()
             is_checkbox = qtype and qtype['check_box']
 
-            # Get all options for this question (including OTHER)
+            # Get all options_18 for this question (including OTHER)
             options_result = conn.execute(text("""
                 SELECT id, option_text, option_code FROM options_18 WHERE question_id = :question_id ORDER BY option_code
             """), {"question_id": question_id})
-            options = options_result.mappings().all()
-            print(f"DEBUG: Found {len(options)} options for question {question_id}")
-            print(f"DEBUG: Options: {options}")
-            option_codes = [opt['option_code'] for opt in options]
-            option_texts = {opt['option_code']: opt['option_text'] for opt in options}
+            options_18 = options_result.mappings().all()
+            print(f"DEBUG: Found {len(options_18)} options_18 for question {question_id}")
+            print(f"DEBUG: Options: {options_18}")
+            option_codes = [opt['option_code'] for opt in options_18]
+            option_texts = {opt['option_code']: opt['option_text'] for opt in options_18}
             print(f"DEBUG: Option codes: {option_codes}")
             print(f"DEBUG: Option texts: {option_texts}")
 
@@ -490,7 +490,7 @@ async def get_question_results(question_id: str, request: Request):
                     if row['option_code'] in results_dict:
                         results_dict[row['option_code']] += row['count']
             else:
-                # Non-checkbox: count from responses table
+                # Non-checkbox: count FROM responses_18 table
                 resp_counts = conn.execute(text("""
                     SELECT option_code, COUNT(*) as count
                     FROM responses_18
@@ -501,26 +501,26 @@ async def get_question_results(question_id: str, request: Request):
                     if row['option_code'] in results_dict:
                         results_dict[row['option_code']] += row['count']
 
-            # Get "Other" responses text for display
+            # Get "Other" responses_18 text for display
             other_responses_result = conn.execute(text("""
                 SELECT other_text
-                FROM other_responses
+                FROM other_responses_18
                 WHERE question_id = :question_id
                 ORDER BY submitted_at DESC
             """), {"question_id": question_id})
-            other_responses = [row['other_text'] for row in other_responses_result.mappings().all()]
+            other_responses_18 = [row['other_text'] for row in other_responses_result.mappings().all()]
 
             # Prepare results for frontend
             formatted_results = {"results": []}
-            logger.debug(f"Processing {len(option_codes)} options: {option_codes}")
+            logger.debug(f"Processing {len(option_codes)} options_18: {option_codes}")
             logger.debug(f"Results dict: {results_dict}")
             for code in option_codes:
                 if code == 'OTHER':
-                    # For "Other", use the count of other_responses for non-checkbox, or weighted count for checkbox
+                    # For "Other", use the count of other_responses_18 for non-checkbox, or weighted count for checkbox
                     if is_checkbox:
                         count = results_dict['OTHER']
                     else:
-                        count = len(other_responses)
+                        count = len(other_responses_18)
                     # Always include "Other" option, even with 0 count
                     logger.debug(f"Adding OTHER option with count: {count}")
                     formatted_results["results"].append({
@@ -530,14 +530,14 @@ async def get_question_results(question_id: str, request: Request):
                     })
                 else:
                     count = results_dict[code]
-                    # Always include all options, even with 0 count
+                    # Always include all options_18, even with 0 count
                     logger.debug(f"Adding option {code} with count: {count}")
                     formatted_results["results"].append({
                         "text": option_texts[code],
                         "code": code,
                         "count": round(count, 2)  # Round to 2 decimal places
                     })
-            formatted_results["custom_responses"] = other_responses
+            formatted_results["custom_responses"] = other_responses_18
             logger.debug(f"Formatted results being returned: {formatted_results}")
             return formatted_results
     except Exception as e:
@@ -600,7 +600,7 @@ async def get_start_question(category_id: str, request: Request):
                 WHERE question_id = :question_id
                 ORDER BY option_code
             """), {"question_id": question['question_id']})
-            options = options_result.mappings().all()
+            options_18 = options_result.mappings().all()
 
             return {
                 "id": question['id'],
@@ -609,14 +609,14 @@ async def get_start_question(category_id: str, request: Request):
                 "category": question['category_name'],
                 "category_id": str(question['category_id']),
                 "color_code": question['color_code'],
-                "options": [{
+                "options_18": [{
                     "id": opt['id'],
                     "text": opt['option_text'],
                     "code": opt['option_code'],
                     "response_message": opt['response_message'],
                     "companion_advice": opt['companion_advice'],
                     "next_question_id": opt['next_question_id']
-                } for opt in options]
+                } for opt in options_18]
             }
     except HTTPException:
         raise
@@ -628,7 +628,7 @@ async def get_start_question(category_id: str, request: Request):
 async def get_next_question(question_id: str, option_code: str, request: Request):
     try:
         with request.app.state.engine.connect() as conn:
-            # Find the next_question_id from the options table
+            # Find the next_question_id from the options_18 table
             next_question_id_result = conn.execute(text("""
                 SELECT next_question_id FROM options_18
                 WHERE question_id = :question_id AND option_code = :option_code
@@ -658,7 +658,7 @@ async def get_next_question(question_id: str, option_code: str, request: Request
                 WHERE question_id = :question_id
                 ORDER BY option_code
             """), {"question_id": question['question_id']})
-            options = options_result.mappings().all()
+            options_18 = options_result.mappings().all()
 
             return {
                 "next_question": {
@@ -668,14 +668,14 @@ async def get_next_question(question_id: str, option_code: str, request: Request
                     "category": question['category_name'],
                     "category_id": str(question['category_id']),
                     "color_code": question['color_code'],
-                    "options": [{
+                    "options_18": [{
                         "id": opt['id'],
                         "text": opt['option_text'],
                         "code": opt['option_code'],
                         "response_message": opt['response_message'],
                         "companion_advice": opt['companion_advice'],
                         "next_question_id": opt['next_question_id']
-                    } for opt in options]
+                    } for opt in options_18]
                 }
             }
     except Exception as e:
@@ -826,7 +826,7 @@ async def submit_checkbox_vote(vote: CheckboxVote, request: Request):
                             VALUES (:uuid, :year_of_birth)
                         """), {"uuid": vote.uuid, "year_of_birth": vote.year_of_birth})
                         logger.info(f"Created new user with UUID: {vote.uuid}")
-            # Insert new checkbox responses
+            # Insert new checkbox responses_18
             for option_code in vote.option_codes:
                 option_result = conn.execute(text("""
                     SELECT id FROM options_18 
@@ -843,7 +843,7 @@ async def submit_checkbox_vote(vote: CheckboxVote, request: Request):
                         "uuid": vote.uuid,
                         "option_code": option_code
                     })
-            # If 'OTHER' is selected and other_text is provided, save to other_responses
+            # If 'OTHER' is selected and other_text is provided, save to other_responses_18
             if 'OTHER' in vote.option_codes and hasattr(vote, 'other_text') and vote.other_text and vote.other_text.strip():
                 conn.execute(
                     insert(other_responses_table).values(
@@ -853,7 +853,7 @@ async def submit_checkbox_vote(vote: CheckboxVote, request: Request):
                         uuid=vote.uuid
                     )
                 )
-            # After recording the vote, check if all questions in the block are answered
+            # After recording the vote, check if all questions_18 in the block are answered
             qinfo = conn.execute(text("""
                 SELECT category_id, block FROM questions_18 WHERE question_id = :qid
             """), {"qid": vote.question_id}).mappings().first()
@@ -887,26 +887,26 @@ async def api_health():
 # Helper: Mark block as completed for a user
 async def mark_block_completed(conn, uuid, category_id, block):
     conn.execute(text("""
-        INSERT INTO user_block_progress (uuid, category_id, block, completed_at)
+        INSERT INTO user_block_progress_18 (uuid, category_id, block, completed_at)
         VALUES (:uuid, :category_id, :block, NOW())
         ON CONFLICT (uuid, category_id, block) DO UPDATE SET completed_at = NOW()
     """), {"uuid": uuid, "category_id": category_id, "block": block})
 
-# Endpoint: Get all blocks for a category
-@app.get("/api/blocks/{category_id}")
+# Endpoint: Get all blocks_18 for a category
+@app.get("/api/blocks_18/{category_id}")
 async def get_blocks_for_category(category_id: int, request: Request):
     try:
         with request.app.state.engine.connect() as conn:
-            # Get all blocks for this category from the blocks table
+            # Get all blocks_18 for this category from the blocks_18 table
             blocks_result = conn.execute(text("""
                 SELECT id, category_id, block_number, block_text, version, uuid, category_name
                 FROM blocks_18
                 WHERE category_id = :category_id
                 ORDER BY block_number
             """), {"category_id": category_id})
-            blocks = [dict(row) for row in blocks_result.mappings().all()]
-            if not blocks:
-                # Fallback: if no blocks in blocks table, get from questions table
+            blocks_18 = [dict(row) for row in blocks_result.mappings().all()]
+            if not blocks_18:
+                # Fallback: if no blocks_18 in blocks_18 table, get FROM questions_18 table
                 fallback_result = conn.execute(text("""
                     SELECT DISTINCT block as block_number, 
                            'Block ' || block as block_text,
@@ -917,9 +917,9 @@ async def get_blocks_for_category(category_id: int, request: Request):
                 """), {"category_id": category_id})
                 fallback_blocks = [dict(row) for row in fallback_result.mappings().all()]
                 if not fallback_blocks:
-                    raise HTTPException(status_code=404, detail="No blocks found for this category")
-                return {"blocks": fallback_blocks}
-            return {"blocks": blocks}
+                    raise HTTPException(status_code=404, detail="No blocks_18 found for this category")
+                return {"blocks_18": fallback_blocks}
+            return {"blocks_18": blocks_18}
     except Exception as e:
         logger.error(f"Error in get_blocks_for_category: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -929,7 +929,7 @@ async def get_blocks_for_category(category_id: int, request: Request):
 async def get_next_block(category_id: int, uuid: str, request: Request):
     try:
         with request.app.state.engine.connect() as conn:
-            # Get all blocks for this category
+            # Get all blocks_18 for this category
             blocks_result = conn.execute(text("""
                 SELECT DISTINCT block FROM questions_18
                 WHERE category_id = :category_id
@@ -937,10 +937,10 @@ async def get_next_block(category_id: int, uuid: str, request: Request):
             """), {"category_id": category_id})
             all_blocks = [row['block'] for row in blocks_result.mappings().all() if row['block'] is not None]
             if not all_blocks:
-                raise HTTPException(status_code=404, detail="No blocks found for this category")
-            # Get blocks completed in last configurable cooldown period
+                raise HTTPException(status_code=404, detail="No blocks_18 found for this category")
+            # Get blocks_18 completed in last configurable cooldown period
             cooldown_result = conn.execute(text(f"""
-                SELECT block FROM user_block_progress
+                SELECT block FROM user_block_progress_18
                 WHERE uuid = :uuid AND category_id = :category_id
                   AND completed_at > NOW() - INTERVAL '{BLOCK_COOLDOWN}'
             """), {"uuid": uuid, "category_id": category_id})
@@ -949,7 +949,7 @@ async def get_next_block(category_id: int, uuid: str, request: Request):
             for block in all_blocks:
                 if block not in cooldown_blocks:
                     return {"block": block}
-            return {"block": None, "message": "No available blocks. Come back later!"}
+            return {"block": None, "message": "No available blocks_18. Come back later!"}
     except Exception as e:
         logger.error(f"Error in get_next_block: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
