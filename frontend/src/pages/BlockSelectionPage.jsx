@@ -58,7 +58,7 @@ const BlockSelectionPage = () => {
         const blocksResponse = await fetch(`${API_BASE_URL}/api/blocks/${categoryId}`)
         if (!blocksResponse.ok) throw new Error('Failed to fetch blocks')
         const blocksData = await blocksResponse.json()
-        setBlocks(blocksData.blocks || [])
+        setBlocks(blocksData.blocks_18 || [])
       } catch (err) {
         console.error('Error fetching data:', err)
         setError(err.message)
