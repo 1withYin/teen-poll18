@@ -224,4 +224,4 @@ const BlockSelectionPage = () => {
   )
 }
 
-export default BlockSelectionPage         console.log("Category set, about to fetch blocks...")
+export default BlockSelectionPage
