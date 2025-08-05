@@ -119,10 +119,16 @@ def run_migrations(engine):
 @app.on_event("startup")
 def startup_event():
     # Debug: Log the database URL being used
-    logger.info(f"Starting up with DATABASE_URL: {DATABASE_URL}")
+    database_url = os.environ.get("DATABASE_URL")
+    if not database_url:
+        logger.error("DATABASE_URL environment variable not set!")
+        raise Exception("DATABASE_URL environment variable not set!")
+    
+    # Debug: Log the database URL being used
+    logger.info(f"Starting up with DATABASE_URL: {database_url}")
     
     # Create the database engine
-    app.state.engine = create_engine(DATABASE_URL)
+    app.state.engine = create_engine(database_url)
     
     # Run migrations - DISABLED TO PREVENT DATA LOSS
     try:
