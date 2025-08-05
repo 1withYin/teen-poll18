@@ -44,3 +44,4 @@ databases:
   - name: teen-poll14-db
     plan: basic-256mb
     region: oregon
+# Updated domain to avoid conflict
