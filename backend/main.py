@@ -162,6 +162,7 @@ app.add_middleware(
     allow_origins=[
         "https://www.myworldmysay.com",
         "https://myworldmysay.com",
+        "https://e18.myworldmysay.com",  # E18 frontend domain
         "http://localhost:3000",  # (optional, for local development)
         "http://localhost:3001",
         "http://192.168.87.244:3001"
