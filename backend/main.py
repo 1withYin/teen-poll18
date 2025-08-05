@@ -906,7 +906,7 @@ async def get_blocks_for_category(category_id: int, request: Request):
         with request.app.state.engine.connect() as conn:
             # Get all blocks_18 for this category from the blocks_18 table
             blocks_result = conn.execute(text("""
-                SELECT id, category_id, block_number, block_text, version, uuid, category_name
+                SELECT id, category_id, block_number, block_text, version, uuid
                 FROM blocks_18
                 WHERE category_id = :category_id
                 ORDER BY block_number
