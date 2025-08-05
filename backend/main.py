@@ -17,7 +17,7 @@
 from fastapi import FastAPI, HTTPException, Request, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses_18 import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 from sqlalchemy import text, insert, Table, Column, Integer, String, MetaData, Text, TIMESTAMP, create_engine
 from typing import List, Dict
 import json
