@@ -1,0 +1,422 @@
+[
+  {
+    "song_id": "STR_01",
+    "song_title": "Spark Still Rise (Male Rap)",
+    "mood_tag": "bitter, beieving",
+    "playlist_tag": "Spiral, Believe, Lowkey",
+    "lyrics_snippet": "You ain\u2019t gotta fake the fire. \nEven sparks can light the sky.",
+    "featured": "TRUE",
+    "featured_order": "1",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/sparks-still-rise.mp3"
+  },
+  {
+    "song_id": "STR_02",
+    "song_title": "Spark Still Rise (Female Rap)",
+    "mood_tag": "bitter, beieving",
+    "playlist_tag": "Spiral, Believe, Lowkey",
+    "lyrics_snippet": "You ain\u2019t gotta fake the fire. \nEven sparks can light the sky.",
+    "featured": "TRUE",
+    "featured_order": "2",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/sparks-still-rise+Girl.mp3"
+  },
+  {
+    "song_id": "DP_01",
+    "song_title": "Daring Path (Female V1)",
+    "mood_tag": "believing",
+    "playlist_tag": "Believe",
+    "lyrics_snippet": "I don\u2019t need small mirrors to shine. \nI don\u2019t need blind eyes to define.",
+    "featured": "TRUE",
+    "featured_order": "3",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/daring+path.mp3"
+  },
+  {
+    "song_id": "DP_02",
+    "song_title": "Daring Path (Female V2)",
+    "mood_tag": "believing",
+    "playlist_tag": "Believe",
+    "lyrics_snippet": "I don\u2019t need small mirrors to shine. \nI don\u2019t need blind eyes to define.",
+    "featured": "TRUE",
+    "featured_order": "4",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/daring+path+2.mp3"
+  },
+  {
+    "song_id": "DBNF_01",
+    "song_title": "Deleted But Not Forgoten (Female)",
+    "mood_tag": "bitter, believing",
+    "playlist_tag": "Hurt, Believe, Spiral",
+    "lyrics_snippet": "Delete the post, \nBut Not Forgotten. \nI\u2019m still here, \nstill me, still real.",
+    "featured": "TRUE",
+    "featured_order": "5",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/deleted%2C-but-not-forgotten.mp3"
+  },
+  {
+    "song_id": "LRDD_01",
+    "song_title": "Left on Read, Dragged in DMs (Female)",
+    "mood_tag": "bitter, believing",
+    "playlist_tag": "Hurt, Believe, Spiral",
+    "lyrics_snippet": "No reply, just side-eyes. \nBut trust\u2014I\u2019m louder than your will.",
+    "featured": "TRUE",
+    "featured_order": "6",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Left+on+Read%2C+Dragged+in+DMs.mp3"
+  },
+  {
+    "song_id": "PINI_01",
+    "song_title": "Photos I'm Not In (Male, Cinematic Rap)",
+    "mood_tag": "bitter, believing",
+    "playlist_tag": "Hurt, Believe, Spiral",
+    "lyrics_snippet": "Photos I\u2019m not in, \ndon\u2019t dim my light.",
+    "featured": "TRUE",
+    "featured_order": "7",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Photos+I%E2%80%99m+Not+In.mp3"
+  },
+  {
+    "song_id": "ISWIA_01",
+    "song_title": "I Said What I Am (Female, Hip-Hop) ",
+    "mood_tag": "bitter, believing",
+    "playlist_tag": "Hurt, Believe, Spiral",
+    "lyrics_snippet": "I know what I\u2019m building. \nEven when they tear me down",
+    "featured": "TRUE",
+    "featured_order": "8",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/I+Said+What+I+Am+(Hip-Hop)+(Edit).mp3"
+  },
+  {
+    "song_id": "IWOTM_01",
+    "song_title": "I want one that's mine (Male)",
+    "mood_tag": "soft, believing",
+    "playlist_tag": "Spiral, Believe, Lowkey",
+    "lyrics_snippet": "Is it peace or just pretend? \nI\u2019m tired of borrowing moods",
+    "featured": "TRUE",
+    "featured_order": "9",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/i-want-one-that%E2%80%99s-mine..mp3"
+  },
+  {
+    "song_id": "IWMG_01",
+    "song_title": "I wasn't mean to go (Female)",
+    "mood_tag": "soft, believing",
+    "playlist_tag": "Hurt, Spiral",
+    "lyrics_snippet": "I wasn\u2019t left out\u2014I feel right\nNot every room deserves my light",
+    "featured": "TRUE",
+    "featured_order": "10",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/I+Wasn%E2%80%99t+Meant+to+Go.mp3"
+  },
+  {
+    "song_id": "STS_M",
+    "song_title": "Sky That Stayed (Male) ",
+    "mood_tag": "believing, inspiring",
+    "playlist_tag": "Hurt, Believe, Breakup",
+    "lyrics_snippet": "You were the storm that tore through fast. \nBut I\u2019m the sky that always lasts. \nStill wide, still blue, still brave, still bright. \nI carry calm, I hold my light.",
+    "featured": "TRUE",
+    "featured_order": "11",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Sky+That+Stayed+(Male).mp3"
+  },
+  {
+    "song_id": "STS_F",
+    "song_title": "Sky That Stayed (Female) ",
+    "mood_tag": "believing, inspiring",
+    "playlist_tag": "Hurt, Believe, Breakup",
+    "lyrics_snippet": "You were the storm that tore through fast. \nBut I\u2019m the sky that always lasts. \nStill wide, still blue, still brave, still bright. \nI carry calm, I hold my light.",
+    "featured": "TRUE",
+    "featured_order": "12",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Sky+That+Stayed+(Female).mp3"
+  },
+  {
+    "song_id": "MVMW_01",
+    "song_title": "My Voice at My World My Say",
+    "mood_tag": "soft, believing",
+    "playlist_tag": "Spiral, Believe",
+    "lyrics_snippet": "Somewhere, someone\u2019s feeling just like this",
+    "featured": "TRUE",
+    "featured_order": "13",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/my-voice.mp3"
+  },
+  {
+    "song_id": "THM_1",
+    "song_title": "Theme Song (Male Inspiring Rap)",
+    "mood_tag": "inspiring",
+    "playlist_tag": "Theme_Song",
+    "lyrics_snippet": "My World, My Say",
+    "featured": "TRUE",
+    "featured_order": "14",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Theme+(Male+Inspiring+Rap).mp3"
+  },
+  {
+    "song_id": "THM_2",
+    "song_title": "Theme Song (Girl HipHop)",
+    "mood_tag": "spicy",
+    "playlist_tag": "Theme_Song",
+    "lyrics_snippet": "My World, My Say",
+    "featured": "TRUE",
+    "featured_order": "15",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Theme+(Girl%2C+HipHop).mp3"
+  },
+  {
+    "song_id": "THM_3",
+    "song_title": "Theme Song (Girl Rap)",
+    "mood_tag": "rap",
+    "playlist_tag": "Theme_Song",
+    "lyrics_snippet": "My World, My Say",
+    "featured": "TRUE",
+    "featured_order": "16",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Theme+(+Girl+Inspiring+Rap).mp3"
+  },
+  {
+    "song_id": "THM_4",
+    "song_title": "Theme Song (Children Choir)",
+    "mood_tag": "inspiring",
+    "playlist_tag": "Theme_Song",
+    "lyrics_snippet": "My World, My Say",
+    "featured": "TRUE",
+    "featured_order": "17",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Theme+(Children+Choir).mp3"
+  },
+  {
+    "song_id": "THM_5",
+    "song_title": "Theme Song (Girl HipHop)",
+    "mood_tag": "inspiring",
+    "playlist_tag": "Theme_Song",
+    "lyrics_snippet": "My World, My Say",
+    "featured": "TRUE",
+    "featured_order": "18",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Theme+(Girl+HipHop+2).mp3"
+  },
+  {
+    "song_id": "AI_RAP_DUET",
+    "song_title": "We Name the Goal (Duet Rap)",
+    "mood_tag": "believing, inspiring",
+    "playlist_tag": "Theme_Song, AI_and_My_Future",
+    "lyrics_snippet": "We shape the world by what we say.",
+    "featured": "TRUE",
+    "featured_order": "19",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/We+Name+the+Goal+(Two+Voice).mp3"
+  },
+  {
+    "song_id": "AI_RAP",
+    "song_title": "We Name the Goal (Rap)",
+    "mood_tag": "believing, inspiring",
+    "playlist_tag": "Theme_Song, AI_and_My_Future",
+    "lyrics_snippet": "We shape the world by what we say.",
+    "featured": "TRUE",
+    "featured_order": "20",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/We+Name+the+Goal.mp3"
+  },
+  {
+    "song_id": "AI_RA_REG",
+    "song_title": "We Name the Goal (Reggaeton)",
+    "mood_tag": "believing, inspiring",
+    "playlist_tag": "Theme_Song, AI_and_My_Future",
+    "lyrics_snippet": "Mi voz, mi mundo, that\u2019s my role",
+    "featured": "TRUE",
+    "featured_order": "21",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/We+Name+the+Goal+(Female+Reggaeton).mp3"
+  },
+  {
+    "song_id": "IIC_CFS_M",
+    "song_title": "It's Coming (Classroom Fart Song) (Male)",
+    "mood_tag": "Chaos, chaos",
+    "playlist_tag": "Chaos, Chaos",
+    "lyrics_snippet": "I shift, I cough, \nI shuffle my shoe\u2026\nBut the fart in my gut says: \n\u201cI\u2019m coming through!",
+    "featured": "TRUE",
+    "featured_order": "22",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/It%E2%80%99s+Coming+(Classroom+Fart+Song+)+(Male).mp3"
+  },
+  {
+    "song_id": "IIC_CFS_F",
+    "song_title": "It's Coming (Classroom Fart Song) (Female)",
+    "mood_tag": "Chaos, chaos",
+    "playlist_tag": "Chaos, Chaos",
+    "lyrics_snippet": "I shift, I cough, \nI shuffle my shoe\u2026\nBut the fart in my gut says: \n\u201cI\u2019m coming through!",
+    "featured": "TRUE",
+    "featured_order": "23",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/It%E2%80%99s+Coming+(Classroom+Fart+Song)+(Female).mp3"
+  },
+  {
+    "song_id": "SSolo_M",
+    "song_title": "Stomach Solo (Male)",
+    "mood_tag": "Chaos",
+    "playlist_tag": "Chaos, Chaos",
+    "lyrics_snippet": "They say follow your gut\n\u2014mine grabs the mic.",
+    "featured": "TRUE",
+    "featured_order": "24",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Stomach+Solo+(Edit).mp3"
+  },
+  {
+    "song_id": "TMTSA_M",
+    "song_title": "Tell Me That Story Again",
+    "mood_tag": "love, lowkey",
+    "playlist_tag": "Love, Lowkey",
+    "lyrics_snippet": "Just learning the map that leads to you. \nNo need to impress, no need to bend\n\u2014Just tell me that story again.",
+    "featured": "TRUE",
+    "featured_order": "25",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Tell+Me+That+Story+Again.mp3"
+  },
+  {
+    "song_id": "CIMH",
+    "song_title": "Cool in My Head",
+    "mood_tag": "Chaos, love",
+    "playlist_tag": "Love, Chaos",
+    "lyrics_snippet": "I planned the whole thing in my head. \nI\u2019d say \u201chey\u201d real chill, then nod instead.",
+    "featured": "TRUE",
+    "featured_order": "26",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Cool+in+My+Head.mp3"
+  },
+  {
+    "song_id": "LYAN",
+    "song_title": "Left You a Note ",
+    "mood_tag": "love, lowkey",
+    "playlist_tag": "Love, Lowkey",
+    "lyrics_snippet": "I left you a note, \ndidn\u2019t sign my name. \nBut it\u2019s tucked in your book, \nlike a gentle flame. \nIt says \u201cYou\u2019re kind\u201d \nand \u201cI see you there\u201d",
+    "featured": "TRUE",
+    "featured_order": "27",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Left+You+a+Note.mp3"
+  },
+  {
+    "song_id": "SYAS",
+    "song_title": "Save You a Seat",
+    "mood_tag": "Chaos, love",
+    "playlist_tag": "Love, Chaos",
+    "lyrics_snippet": "You dropped your pen, \nI gave it back. \nSaid, \u201cNo big deal,\u201d\n then overreacted. \nInside I\u2019m screaming \n\u201cThat was smooth\u2026\u201d. \nBut outside I\u2019m just me + you",
+    "featured": "TRUE",
+    "featured_order": "28",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Saved+You+a+Seat.mp3"
+  },
+  {
+    "song_id": "YAAW_M",
+    "song_title": "You\u2019re already whole",
+    "mood_tag": "love",
+    "playlist_tag": "Love",
+    "lyrics_snippet": "I don\u2019t need flowers or big displays. \nJust look at me that certain way. \nI show my care in lowercase. \nLike staying late, like knowing your pace.",
+    "featured": "TRUE",
+    "featured_order": "29",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/You%E2%80%99re+already+whole.mp3"
+  },
+  {
+    "song_id": "YEAH_F",
+    "song_title": "Yeah, I Noticed (POV_ The girl who sees through the act)",
+    "mood_tag": "love",
+    "playlist_tag": "Love",
+    "lyrics_snippet": "You don\u2019t have to say you\u2019re brave. \nI already saw you try. \nIt\u2019s not the words that made me smile\n\u2014It\u2019s the trying.",
+    "featured": "TRUE",
+    "featured_order": "30",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Yeah%2C+I+Noticed+(POV_+The+girl+who+sees+through+the+act)+(1).mp3"
+  },
+  {
+    "song_id": "GG_1",
+    "song_title": "Glossed & Glowing",
+    "mood_tag": "pinky",
+    "playlist_tag": "Pinky",
+    "lyrics_snippet": "Glossed and glowing, \nheart still knowing: \nYou don\u2019t need loud to be overflowing",
+    "featured": "TRUE",
+    "featured_order": "31",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Glossed+%26+Glowing.mp3"
+  },
+  {
+    "song_id": "GG_2",
+    "song_title": "Glossed & Glowing (2)",
+    "mood_tag": "pinky",
+    "playlist_tag": "Pinky",
+    "lyrics_snippet": "Glossed and glowing,\nheart still knowing: \nYou don\u2019t need loud to be overflowing",
+    "featured": "TRUE",
+    "featured_order": "32",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Glossed+%26+Glowing+(2).mp3"
+  },
+  {
+    "song_id": "SSKY_TB",
+    "song_title": "Same Sky (Rap Teen Boy Side)",
+    "mood_tag": "family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "I don\u2019t need you to fix the rain\nJust stay close when I\u2019m hiding pain",
+    "featured": "TRUE",
+    "featured_order": "33",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Same+Sky+(Rap+Teen+Side).mp3"
+  },
+  {
+    "song_id": "SSKY_TG",
+    "song_title": "Same Sky (Teen Girl Side)",
+    "mood_tag": "family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "I don\u2019t need you to fix the rain\nJust stay close when I\u2019m hiding pain",
+    "featured": "TRUE",
+    "featured_order": "34",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Same+Sky+(Teen+Girl+Side).mp3"
+  },
+  {
+    "song_id": "SSKY_PRNT",
+    "song_title": "Same Sky (Parent Side)",
+    "mood_tag": "family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "If I listened with more grace, \nwith less reply, \nWould your heart stay close \ninstead of saying goodbye?",
+    "featured": "TRUE",
+    "featured_order": "35",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Same+Sky+(Rap+Parent+Side).mp3"
+  },
+  {
+    "song_id": "SSKY_DUET",
+    "song_title": "Same Sky (Duet)",
+    "mood_tag": "family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "If we both reach out\nWe could find each other in the light",
+    "featured": "TRUE",
+    "featured_order": "36",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Same+Sky+Duet.mp3"
+  },
+  {
+    "song_id": "SDSC",
+    "song_title": "Some Days Still Count",
+    "mood_tag": "lowkey",
+    "playlist_tag": "Lowkey, Believe",
+    "lyrics_snippet": "Some days don\u2019t shine. \nBut I still keep time. I don\u2019t glow, \nI don\u2019t shout. \nBut I still know what I\u2019m about",
+    "featured": "TRUE",
+    "featured_order": "37",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Some+Days+Still+Count+(emo).mp3"
+  },
+  {
+    "song_id": "SVAM",
+    "song_title": "Mountains vs A Mattress",
+    "mood_tag": "family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "Too much rain, too many shoulds, Advice that comes in endless drifts. They only need a quiet sound, A gentle hand, a steady ground",
+    "featured": "TRUE",
+    "featured_order": "38",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Clear+Sky%2C+Gentle+Ground.mp3"
+  },
+  {
+    "song_id": "AR_1",
+    "song_title": "A Riddle (1)",
+    "mood_tag": "family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "But when they fall, \nI lift them high, \nLike springs that push toward the sky. \nBounce them forward, \nlet them soar, \nYet I remain\u2014a bed with springs. ",
+    "featured": "TRUE",
+    "featured_order": "39",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Riddle+4.mp3"
+  },
+  {
+    "song_id": "TUT",
+    "song_title": "The Uncommon Tread",
+    "mood_tag": "inspiring",
+    "playlist_tag": "Believe",
+    "lyrics_snippet": " I won\u2019t trade my stars for stone  \nOr lose my voice to feel less alone . \nWhat\u2019s rare is still a song unsaid, \nI\u2019m proud to wear the uncommon thread.",
+    "featured": "TRUE",
+    "featured_order": "40",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/The+Uncommon+Thread.mp3"
+  },
+  {
+    "song_id": "FHERE",
+    "song_title": "Forever Here",
+    "mood_tag": "Family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "You say, \u2018Leave me alone,\u2019 \nbut I hear \u2018Please don\u2019t go\u2019",
+    "featured": "TRUE",
+    "featured_order": "41",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/Forever+Here.mp3"
+  },
+  {
+    "song_id": "IFYLM",
+    "song_title": "If You Let Me",
+    "mood_tag": "Family",
+    "playlist_tag": "Family",
+    "lyrics_snippet": "I held your hand, but missed your heart\nI stayed close, but felt apart\nIf I could go back, I\u2019d learn to stay\nNot just with love\u2014but in your way",
+    "featured": "TRUE",
+    "featured_order": "42",
+    "file_url": "https://myworld-soundtrack.s3.us-east-2.amazonaws.com/myworld_soundtrack/if-you'll-let-me.mp3"
+  }
+]
