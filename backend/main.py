@@ -175,7 +175,7 @@ app.add_middleware(
 # API Endpoints
 # --------------------
 # Get all categories_18
-@app.get("/api/categories_18")
+@app.get("/api/categories")
 async def get_categories(request: Request):
     try:
         # Debug: Log the database URL being used
@@ -248,7 +248,7 @@ async def get_categories(request: Request):
         return []
 
 # Get all questions_18 (optionally filter by category and block)
-@app.get("/api/questions_18")
+@app.get("/api/questions")
 async def get_questions(request: Request, category_id: str = Query(None), block: int = Query(None)):
     try:
         with request.app.state.engine.connect() as conn:
@@ -439,7 +439,7 @@ async def submit_vote(vote: Vote, request: Request):
         logger.error(f"Error submitting vote: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/api/questions_18/{question_id}/results")
+@app.get("/api/questions/{question_id}/results")
 async def get_question_results(question_id: str, request: Request):
     print(f"DEBUG: Getting results for question_id: {question_id}")
     logger.debug(f"Getting results for question_id: {question_id}")
@@ -899,7 +899,7 @@ async def mark_block_completed(conn, uuid, category_id, block):
     """), {"uuid": uuid, "category_id": category_id, "block": block})
 
 # Endpoint: Get all blocks_18 for a category
-@app.get("/api/blocks_18/{category_id}")
+@app.get("/api/blocks/{category_id}")
 async def get_blocks_for_category(category_id: int, request: Request):
     try:
         with request.app.state.engine.connect() as conn:
